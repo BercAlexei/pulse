@@ -1,1 +1,6 @@
-@import 'main/variables'
+@import 'base/fonts';
+@import 'base/variables';
+
+* {
+    font-family: 'Museo Sans Cyrl';
+}
