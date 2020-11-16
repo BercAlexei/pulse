@@ -1,5 +1,6 @@
+@import 'base/libs';
 @import 'base/fonts';
-@import 'base/variables';
+@import 'base/vars';
 
 * {
     font-family: 'Museo Sans', sans-serif;
@@ -13,3 +14,5 @@
 @import 'blocks/promo';
 @import 'blocks/header';
 @import 'blocks/buttons';
+
+@import 'base/media';
