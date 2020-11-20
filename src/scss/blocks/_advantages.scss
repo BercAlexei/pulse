@@ -9,6 +9,9 @@
     }
     &__item {
         max-width: 247px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     &__subtitle {
         font-size: 18px;
