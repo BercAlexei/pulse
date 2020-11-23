@@ -4,7 +4,9 @@ const gulp = require('gulp'),
     rename = require("gulp-rename"),
     cleanCSS = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify');;
 
 
 gulp.task('server', function () {
@@ -28,9 +30,22 @@ gulp.task('styles', function () {
         .pipe(browserSync.stream());
 });
 
+gulp.task('scripts', function(){
+    return gulp.src([
+                     "node_modules/jquery/dist/jquery.min.js",
+                     "node_modules/slick-carousel/slick/slick.min.js",
+                     "src/js/_script.js"
+                    ])
+        .pipe(concat('script.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('src/js'))
+        .pipe(browserSync.stream());
+  });
+
 gulp.task('watch', function(){
     gulp.watch("src/scss/**/*.+(scss|sass)", gulp.parallel("styles"))
+    gulp.watch(['src/js/_script.js'], gulp.parallel('scripts'));
     gulp.watch("src/*.html").on("change", browserSync.reload);
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles'))
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts'))
