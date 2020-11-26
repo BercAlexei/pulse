@@ -21,23 +21,23 @@
             outline: none;
         }
         // arrow none
-        &[type="number"] {
-            &::-webkit-outer-spin-button,
-            &::-webkit-inner-spin-button {
-                -webkit-appearance: none;
-            }
-        }
-        &[type='number'] {
-            appearance: none;
-            -moz-appearance: textfield;
-        }
-        &[type="number"] {
-            &:hover,
-            &:focus {
-                appearance: none;
-                -moz-appearance: textfield;
-            }
-        }
+    //     &[type="number"] {
+    //         &::-webkit-outer-spin-button,
+    //         &::-webkit-inner-spin-button {
+    //             -webkit-appearance: none;
+    //         }
+    //     }
+    //     &[type='number'] {
+    //         appearance: none;
+    //         -moz-appearance: textfield;
+    //     }
+    //     &[type="number"] {
+    //         &:hover,
+    //         &:focus {
+    //             appearance: none;
+    //             -moz-appearance: textfield;
+    //         }
+    //     }
     }
 
 }
