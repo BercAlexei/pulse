@@ -92,6 +92,41 @@
             }
         }
     }
+
+    .catalog {
+        padding-bottom: 80px;
+        &__tabs {
+            margin-top: 50px;
+        }
+        &__content {
+            justify-content: space-around;
+        }
+    }
+
+    .reviews {
+        &__wrapper {
+            margin-top: 60px;
+        }
+        &__item {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__img {
+            margin: 0;
+        }
+        &__descr {
+            margin-top: 25px;
+        }
+        &__name {
+            text-align: center;
+        }
+        &__subtitle {
+            text-align: center;
+        }
+        &__message {
+            text-align: center;
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -118,6 +153,32 @@
 
     .carousel {
         padding: 60px 0 30px 0;
+    }
+
+    .catalog {
+        padding-bottom: 80px;
+        &__tabs {
+            flex-direction: column;
+        }
+        &__tab {
+            margin: 5px 0;
+        }
+    }
+
+    .reviews {
+        &__descr {
+            max-width: 500px;
+        }
+    }
+
+    .footer {
+        min-height: 270px;
+        iframe {
+            display: none;
+        }
+        &__info {
+            width: 100vw;
+        }
     }
 }
 
@@ -175,6 +236,48 @@
                     height: 10px;
                 }
             }
+        }
+    }
+
+    .catalog {
+        padding-bottom: 40px;
+        &__tabs {
+            margin-top: 25px;
+        }
+        &__content {
+            justify-content: space-around;
+        }
+    }
+
+    .reviews {
+        hr {
+            margin: 25px 0px;
+        }
+        &__wrapper {
+            margin-top: 40px;
+        }
+        &__descr {
+            margin-top: 25px;
+            max-width: 300px;
+        }
+    }
+
+    .footer {
+        min-height: 200px;
+        
+        &__info {
+            height: 200px;
+            padding: 20px;
+        }
+        &__addr {
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+        &__phone {
+            margin-bottom: 25px;
+        }
+        &__social-item {
+            margin: 0 10px;
         }
     }
 }
