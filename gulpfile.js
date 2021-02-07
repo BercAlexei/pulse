@@ -6,7 +6,7 @@ const gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify');;
+    uglify = require('gulp-uglify');
 
 
 gulp.task('server', function () {
@@ -34,6 +34,7 @@ gulp.task('scripts', function(){
     return gulp.src([
                      "node_modules/jquery/dist/jquery.min.js",
                      "node_modules/slick-carousel/slick/slick.min.js",
+                     "node_modules/jquery-validation/dist/jquery.validate.min.js",
                      "src/js/_script.js"
                     ])
         .pipe(concat('script.min.js'))
