@@ -106,4 +106,24 @@ $("form").submit(function(e){
   return false;
   
 });
+
+// smooth scroll and pageup
+
+  $(window).on('scroll', function() {
+    if($(this).scrollTop() > 1600) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  }); 
+
+  $(function(){
+    $("a[href^='#']").on('click', function(){
+            const _href = $(this).attr("href");
+            $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+            return false;
+    });
+});
+
+
 });
