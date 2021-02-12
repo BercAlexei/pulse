@@ -111,7 +111,7 @@ $("form").submit(function(e){
 
   $(window).on('scroll', function() {
     if($(this).scrollTop() > 1600) {
-      $('.pageup').fadeIn();
+      $('.pageup').fadeIn("slow");
     } else {
       $('.pageup').fadeOut();
     }
@@ -124,6 +124,10 @@ $("form").submit(function(e){
             return false;
     });
 });
+
+// add WOW
+
+new WOW().init();
 
 
 });

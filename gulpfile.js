@@ -35,7 +35,8 @@ gulp.task('scripts', function(){
                      "node_modules/jquery/dist/jquery.min.js",
                      "node_modules/slick-carousel/slick/slick.min.js",
                      "node_modules/jquery-validation/dist/jquery.validate.min.js",
-                     "src/js/_jquery.maskedinput.min.js",
+                     "jquery.maskedinput-master/dist/jquery.maskedinput.min.js",
+                     "WOW-master/dist/wow.min.js",
                      "src/js/_script.js"
                     ])
         .pipe(concat('script.min.js'))

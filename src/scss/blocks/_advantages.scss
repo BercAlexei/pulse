@@ -30,4 +30,16 @@
             text-decoration: underline;
         }
     }
+    &__icon{
+        &_animated {
+            animation: heartBeat 1.5s ease infinite;
+            // animation-name: heartBeat;
+            // animation-duration: 1.5s;
+            // animation-timing-function: ease-out;
+            // animation-iteration-count: infinite;
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+    }
 }
