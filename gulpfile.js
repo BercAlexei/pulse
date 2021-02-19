@@ -6,15 +6,19 @@ const gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    htmlmin = require('gulp-htmlmin');
 
 
 gulp.task('server', function () {
     browserSync.init({
         server: {
-            baseDir: "src"
+            baseDir: "dist"
         }
     });
+
+    gulp.watch("src/*.html").on("change", browserSync.reload);
 });
 
 gulp.task('styles', function () {
@@ -26,7 +30,7 @@ gulp.task('styles', function () {
         }))
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest("src/css"))
+        .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
 });
 
@@ -41,14 +45,42 @@ gulp.task('scripts', function(){
                     ])
         .pipe(concat('script.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('src/js'))
+        .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.stream());
   });
 
 gulp.task('watch', function(){
-    gulp.watch("src/scss/**/*.+(scss|sass)", gulp.parallel("styles"))
+    gulp.watch("src/scss/**/*.+(scss|sass|css)", gulp.parallel("styles"))
     gulp.watch(['src/js/_script.js'], gulp.parallel('scripts'));
-    gulp.watch("src/*.html").on("change", browserSync.reload);
+    gulp.watch("src/*.html").on("change", gulp.parallel('html'));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts'))
+gulp.task('html', function(){
+    return gulp.src("src/*.html")
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest("dist/"));
+});
+
+gulp.task('fonts', function(){
+    return gulp.src("src/fonts/*")
+        .pipe(gulp.dest("dist/fonts"));
+});
+
+gulp.task('icons', function(){
+    return gulp.src("src/icons/**/*")
+        .pipe(gulp.dest("dist/icons"));
+});
+
+
+gulp.task('mailer', function(){
+    return gulp.src("src/mailer/*")
+        .pipe(gulp.dest("dist/mailer"));
+});
+
+gulp.task('images', function(){
+    return gulp.src("src/img/**/*")
+        .pipe(imagemin())
+        .pipe(gulp.dest("dist/img"));
+});
+
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'mailer', 'html', 'images'))
