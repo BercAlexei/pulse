@@ -38,7 +38,7 @@
   ],
   "dependencies": {
     "animate.css": "^4.1.1",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
     "jquery-validation": "^1.19.3",
     "slick-carousel": "^1.8.1"
   }
