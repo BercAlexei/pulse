@@ -284,7 +284,7 @@
 
 @media (max-width: 425px) {
     .modal {
-        height: 100vh;
+        max-height: 100vh;
         width: 300px;
         &__close {
             top: 10px;
