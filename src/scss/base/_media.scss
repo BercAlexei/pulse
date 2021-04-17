@@ -284,18 +284,19 @@
 
 @media (max-width: 425px) {
     .modal {
+        padding: 35px;
         width: 300px;
         &__close {
             top: 10px;
             right: 10px;
         }
         &__descr {
-            font-size: 14px;
+            display: none;
         }
         label.error {
             border: none;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 14px;
         }
     }
@@ -303,5 +304,8 @@
         &_modal {
             font-size: 14px;
         }
+    }
+    .feed-form {
+        margin-top: 25px;
     }
 }
