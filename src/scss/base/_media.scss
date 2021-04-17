@@ -281,3 +281,21 @@
         }
     }
 }
+
+@media (max-width: 425px) {
+    .modal {
+        width: 300px;
+        &__close {
+            top: 10px;
+            right: 10px;
+        }
+        &__descr {
+            font-size: 14px;
+        }
+    }
+    .button {
+        &_modal {
+            font-size: 14px;
+        }
+    }
+}

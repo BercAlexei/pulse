@@ -33,4 +33,12 @@
         left: auto;
         right: -66px;
     }
+
+    .slick-dots {
+        li {
+            button {
+                padding: 0;
+            }
+        }
+    }
 }
